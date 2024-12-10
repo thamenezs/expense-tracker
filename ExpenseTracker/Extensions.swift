@@ -15,3 +15,19 @@ extension Color {
     static let systemBackground = Color(uiColor: .systemBackground)
     
 }
+
+
+extension DateFormatter {
+    static let allNumericBR: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+}
+
+extension String {
+    func dateParsed() -> Date {
+        guard let parserdDate = DateFormatter.allNumericBR.date(from: self) else { return Date() }
+        return parserdDate
+    }
+}
