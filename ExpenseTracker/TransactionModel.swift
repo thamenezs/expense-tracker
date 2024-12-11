@@ -23,6 +23,14 @@ struct Transaction: Identifiable, Decodable, Hashable {
     var isExpense: Bool
     var isEdited: Bool
     
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: { $0.id == categoryId }) {
+            return category.icon
+        }
+        
+        return .question
+    }
+    
     var dateParsed: Date {
         date.dateParsed()
     }
@@ -102,5 +110,7 @@ extension Category {
         .software,
         .creditCardPayment
     ]
+    
+    static let all: [Category] = categories + subcategories
     
 }
