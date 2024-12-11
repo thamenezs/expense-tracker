@@ -18,6 +18,7 @@
 		D6723DA62D090A6100FE4D18 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = D6723DA52D090A6100FE4D18 /* SwiftUIFontIcon */; };
 		D6723DA82D090B2700FE4D18 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6723DA72D090B2700FE4D18 /* TransactionListViewModel.swift */; };
 		D6723DAC2D093E9000FE4D18 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6723DAB2D093E9000FE4D18 /* RecentTransactionList.swift */; };
+		D6723DAE2D09D41600FE4D18 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6723DAD2D09D41600FE4D18 /* TransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D6723DA22D08F89D00FE4D18 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		D6723DA72D090B2700FE4D18 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		D6723DAB2D093E9000FE4D18 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
+		D6723DAD2D09D41600FE4D18 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				D6723D9C2D08F66F00FE4D18 /* TransactionModel.swift */,
 				D6723DA22D08F89D00FE4D18 /* TransactionRow.swift */,
 				D6723DA72D090B2700FE4D18 /* TransactionListViewModel.swift */,
+				D6723DAD2D09D41600FE4D18 /* TransactionList.swift */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6723D9F2D08F77A00FE4D18 /* PreviewData.swift in Sources */,
+				D6723DAE2D09D41600FE4D18 /* TransactionList.swift in Sources */,
 				D6723DAC2D093E9000FE4D18 /* RecentTransactionList.swift in Sources */,
 				D6723D9D2D08F66F00FE4D18 /* TransactionModel.swift in Sources */,
 				D6723D8F2D08F0A900FE4D18 /* ContentView.swift in Sources */,

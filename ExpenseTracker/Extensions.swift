@@ -20,7 +20,7 @@ extension Color {
 extension DateFormatter {
     static let allNumericBR: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "MM/dd/yyyy"
         return formatter
     }()
 }
