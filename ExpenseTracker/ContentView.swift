@@ -9,7 +9,8 @@ import SwiftUI
 import SwiftUICharts
 
 struct ContentView: View {
-    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
+    @EnvironmentObject var transactionListVM: TransactionListViewModel
+//    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
     
     var body: some View {
         NavigationStack {
@@ -19,20 +20,23 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                     
-                    CardView {
-                        VStack{
-                            ChartLabel("$900", type: .title)
-                                .background(Color.systemBackground)
-                            LineChart()
-                                .background(Color.systemBackground)
+                    let data = transactionListVM.accumulateTransactions()
+                    if !data.isEmpty {
+                        let totalExpenses = data.last?.1 ?? 0
+                        CardView {
+                            VStack(alignment: .leading) {
+                                ChartLabel(totalExpenses.formatted(.currency(code: Locale.current.currency?.identifier ?? "BRL")), type: .title, format: "R$ %.02f")
+                                    .background(Color.systemBackground)
+                                LineChart()
+                                    .background(Color.systemBackground)
+                            }
+                            .background(Color.systemBackground)
                         }
-                        .background(Color.systemBackground)
+                        .data(data)
+                        .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
+                        .frame(height: 300)
+                        
                     }
-                    .data(demoData)
-                    .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
-                .frame(height: 300)
-                
-                    
                     RecentTransactionList()
                 }
                 .padding()
